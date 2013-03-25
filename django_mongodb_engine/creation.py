@@ -157,6 +157,8 @@ class DatabaseCreation(NonrelDatabaseCreation):
             size = getattr(model._meta, 'collection_size', None)
             if size is not None:
                 kwargs['size'] = size
+            else:
+                kwargs['size'] = 10000000000
             max_ = getattr(model._meta, 'collection_max', None)
             if max_ is not None:
                 kwargs['max'] = max_
